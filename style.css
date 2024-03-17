@@ -33,9 +33,9 @@ html {
     top: 130%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
 
-  button {  
+button {  
     position: relative;
     opacity: 100%;
     padding: 0.75em 2em;
@@ -112,23 +112,38 @@ html {
         inset 0 20px 20px 0 rgba(248, 191, 69, 0.75), 0 0 0 8px #000,
         0 9px 0 0 #444;
     }
-  }
-
-table {
-    border-collapse: collapse; 
-    width: 100%; 
 }
 
-td {
-    font-family: sans-serif;
-    text-align: center; 
-    padding: 5px;
+#pokemon-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 45vh;
+}
+  
+.card {
+    width: 200px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: help;
 }
 
-.pokemon-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 5px;
-    width: 200px; /* Largeur de la carte */
-    display: inline-block; /* Afficher les cartes en ligne */
+.card:hover {
+    transform: translateY(-10px);
 }
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.card-title:first-letter {
+    text-transform: capitalize; /* Met la première lettre en majuscule */
+}
+
