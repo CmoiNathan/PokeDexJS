@@ -108,7 +108,7 @@ function PokeCard() {
                             })
                             const PokemonCry = getPokemonCryUrl(pokemonId);
                             const sound = new Audio(PokemonCry);
-                            sound.volume = 0.061;
+                            sound.volume = 0.021;
                             sound.play();
                             // Affiche la modal
                             pokemonModal.show();
@@ -262,7 +262,7 @@ SearchPoke();
 // Sélectionne l'élément audio
 const BackgroundMusicPoke = document.getElementById("background-music");
 // Baisse le volume à 0.1
-BackgroundMusicPoke.volume = 0.061;
+BackgroundMusicPoke.volume = 0.021;
 
 // Définit une fonction pour obtenir l'URL du cri du Pokémon en fonction de son ID
 function getPokemonCryUrl(pokemonId) {
