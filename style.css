@@ -121,8 +121,13 @@ html {
     border-color: #c0392b;
 }
 
+.card{
+    width: 15rem;
+}
+
 .card-text{
     text-align: center;
+    color: white;
 }
 
 #scrollArrow {
