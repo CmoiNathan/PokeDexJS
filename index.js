@@ -277,7 +277,7 @@ function PokeTitleClick() {
     
 }
 
-// Sélectionne l'élément de fond d'écran Pokemon (le titre)
+// Sélectionne l'élément de fond d'écran Pokemon (le titre du Pokedex)
 let PokeclickTitle = document.getElementById('poketitle');
 
 // Ajoute un écouteur d'événement au clic sur le fond d'écran Pokemon (le titre)
