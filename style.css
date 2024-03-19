@@ -36,6 +36,8 @@ html {
 
 .find-Poketitle {
     width: 50vh;
+    bottom: 60px;
+    position: relative;
 }
 
 .container-button {
@@ -83,25 +85,30 @@ html {
     position: relative; 
     top: 40vh;
     padding: 20px;
-    background-color: #ffff;
+    background-image: url("images/pokescreen.png");
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-size: cover;
+    background-position: top;
 }
 
 .form-pokedex .input-poke {
     display: block;
+    background-color: #74accc;
     width: calc(100% - 40px);
     height: 36px;
     border: none;
-    border-bottom: 2px solid #0c0c0b;
+    border-bottom: 2px solid grey;
     font-size: 18px;
     font-weight: 400;
     padding-left: 10px;
     transition: border-color 0.3s ease-in-out;
     color: #333;
+    position: relative;
+    left:3%;
 }
 
 .form-pokedex .label-poke {

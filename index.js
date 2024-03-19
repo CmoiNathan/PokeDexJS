@@ -4,7 +4,7 @@ const PokemonList = document.getElementById("pokemon-card");
 // Définit une fonction pour créer les cartes Pokémon
 function PokeCard() {
     // Effectue une requête pour récupérer les données des 151 premiers Pokémon
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=250")
         .then((response) => response.json()) // Convertit la réponse en JSON
         .then((Info) => {
 
