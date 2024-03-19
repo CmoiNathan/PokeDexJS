@@ -20,7 +20,7 @@ html {
 }
 
 .pokedex-title {
-    display: inline-block; /* Permet de centrer l'élément */
+    display: inline-block; 
     padding-top: 23vh;
     padding-bottom: 23vh;
     padding-left: 35vh;
@@ -31,7 +31,11 @@ html {
 }
 
 .pokedex-title:hover {
-    transform: translate(20px, 20px); /* Déplacer en diagonale vers le bas à droite */
+    transform: translate(20px, 20px); 
+}
+
+.find-Poketitle {
+    width: 50vh;
 }
 
 .container-button {
@@ -75,7 +79,6 @@ html {
     text-transform: capitalize;
 }
 
-/* Style de base pour le formulaire pokedex */
 .form-pokedex {
     position: relative; 
     top: 40vh;
@@ -88,13 +91,12 @@ html {
     justify-content: center;
 }
 
-/* Style pour l'entrée du nom du Pokémon */
 .form-pokedex .input-poke {
     display: block;
     width: calc(100% - 40px);
     height: 36px;
     border: none;
-    border-bottom: 2px solid #c0392b;
+    border-bottom: 2px solid #0c0c0b;
     font-size: 18px;
     font-weight: 400;
     padding-left: 10px;
@@ -102,7 +104,6 @@ html {
     color: #333;
 }
 
-/* Style pour le label "Trouver votre Pokémon" */
 .form-pokedex .label-poke {
     position: relative;
     left: 50%;
@@ -115,10 +116,31 @@ html {
     margin-top: -30px;
 }
 
-/* Style pour l'entrée Pokémon focus */
 .form-pokedex .input-poke:focus {
     outline: none;
-    border-color: #0c0c0b;
+    border-color: #c0392b;
 }
 
- 
+.card-text{
+    text-align: center;
+}
+
+#scrollArrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: lightgray;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;}
+          
+    #scrollArrow:hover {
+      background-color: gray;}
+          #scrollArrow::before {
+              content: '\2191';
+              font-size: 1.5rem;}
