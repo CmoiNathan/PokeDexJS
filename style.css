@@ -59,7 +59,7 @@ html {
     margin-bottom: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    cursor: help;
+    cursor: pointer;
 }
 
 .card:hover {
@@ -204,3 +204,5 @@ html {
     line-height: 1.6;
     color: #333;
 }
+
+    

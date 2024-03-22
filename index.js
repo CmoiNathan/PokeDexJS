@@ -12,13 +12,14 @@
 //                                        |
 //----------------------------------------|
 
+
 // Sélectionne l'élément HTML avec l'ID "pokemon-card"
 const PokemonList = document.getElementById("pokemon-card");
 
 // Définit une fonction pour créer les cartes Pokémon
 function PokeCard() {
     // Effectue une requête pour récupérer les données des 151 premiers Pokémon
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=1025")
         .then((response) => response.json()) // Convertit la réponse en JSON
         .then((Info) => {
             // Boucle à travers les résultats des Pokémon
@@ -101,9 +102,9 @@ function PokeCard() {
                             // Récupérer la description du Pokémon
                             fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`)
                             .then(response => response.json())
-                            .then(speciesData => {
+                            .then(PokeDescription => {
                                 // Filtrer les caractères de contrôle de la description
-                                const description = speciesData.flavor_text_entries.find(entry => entry.language.name === "en").flavor_text.replace(/[\n\t\f]/g, ' ');
+                                const description = PokeDescription.flavor_text_entries.find(entry => entry.language.name === "en").flavor_text.replace(/[\n\t\f]/g, ' ');
                                 document.getElementById('pokemonModalDescription').textContent = `Description : ${description}`;
                             })
                             const PokemonCry = getPokemonCryUrl(pokemonId);
@@ -236,7 +237,7 @@ function SearchPoke() {
 
     // Parcourt chaque carte Pokémon
     pokemonCards.forEach(card => {
-        // Récupère le nom du Pokémon associé à la carte et le met en min
+        // Récupère le nom du Pokémon associé à la carte et le met en minuscule
         const pokemonName = card.querySelector(".card-title").textContent.toLowerCase();
         
         // Vérifie si le nom du Pokémon contient le texte saisi dans le champ de recherche
@@ -261,8 +262,22 @@ SearchPoke();
 
 // Sélectionne l'élément audio
 const BackgroundMusicPoke = document.getElementById("background-music");
+
 // Baisse le volume à 0.1
 BackgroundMusicPoke.volume = 0.021;
+
+// Définit une fonction pour réinitialiser et lire la musique en boucle
+function playBackgroundMusic() {
+    BackgroundMusicPoke.currentTime = 0; // Réinitialise la musique au début
+    BackgroundMusicPoke.play(); // Joue la musique
+}
+
+// Écoute l'événement 'ended' pour réinitialiser et lire à nouveau la musique en boucle
+BackgroundMusicPoke.addEventListener('ended', playBackgroundMusic);
+
+// Joue la musique pour la première fois
+playBackgroundMusic();
+
 
 // Définit une fonction pour obtenir l'URL du cri du Pokémon en fonction de son ID
 function getPokemonCryUrl(pokemonId) {
@@ -282,3 +297,4 @@ let PokeclickTitle = document.getElementById('poketitle');
 
 // Ajoute un écouteur d'événement au clic sur le fond d'écran Pokemon (le titre)
 PokeclickTitle  .addEventListener('click', PokeTitleClick);
+
