@@ -252,12 +252,9 @@ Scroll();
 //----------------------------------------|
 
 // Définit une fonction pour la recherche de Pokémon
-// Définit une fonction pour la recherche de Pokémon
 function SearchPoke() {
     // Récupère la valeur saisie dans le champ de recherche et la met en minuscules
-    const searchString = document.getElementById("pokemon-name").value.trim().toLowerCase();
-    // Récupère le type sélectionné dans la liste déroulante
-    const selectedType = document.getElementById("pokemon-type").value.toLowerCase();
+    const pokeFoundName = document.getElementById("pokemon-name").value.toLowerCase();
     // Sélectionne le champ de recherche
     const inputField = document.getElementById("pokemon-name");
 
@@ -268,30 +265,19 @@ function SearchPoke() {
 
     // Parcourt chaque carte Pokémon
     pokemonCards.forEach(card => {
-        // Récupère les types du Pokémon associé à la carte
-        const pokemonTypes = Array.from(card.querySelectorAll(".card-text")).map(type => type.textContent.trim().toLowerCase());
+        // Récupère le nom du Pokémon associé à la carte et le met en minuscule
+        const pokemonName = card.querySelector(".card-title").textContent.toLowerCase();
         
-        // Vérifie si le type sélectionné est "Tous les types" ou si le type du Pokémon correspond au type sélectionné
-        if (selectedType === 'all' || pokemonTypes.includes(selectedType)) {
-            // Récupère le nom du Pokémon associé à la carte et le met en minuscule
-            const pokemonName = card.querySelector(".card-title").textContent.trim().toLowerCase();
-            // Récupère l'ID du Pokémon associé à la carte
-            const pokemonId = card.querySelector(".card-number").textContent.trim();
-            // Vérifie si le nom ou l'ID du Pokémon correspond à la recherche
-            if (pokemonName.includes(searchString) || pokemonId === searchString) {
-                // Affiche la carte si le nom ou l'ID correspond et que le type correspond
-                card.style.display = "block";
-            } else {
-                // Masque la carte si le nom ou l'ID ne correspond pas mais que le type correspond
-                card.style.display = "none";
-            }
+        // Vérifie si le nom du Pokémon contient le texte saisi dans le champ de recherche
+        if (pokemonName.includes(pokeFoundName)) {
+            // Affiche la carte si le nom correspond
+            card.style.display = "block";
         } else {
-            // Masque la carte si le type du Pokémon ne correspond pas au type sélectionné
+            // Masque la carte si le nom ne correspond pas
             card.style.display = "none";
         }
     });
 }
-
 
 // Appelle la fonction de recherche de Pokémon
 SearchPoke();
