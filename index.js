@@ -210,6 +210,9 @@ function getTypeColor(types) {
     }
 }
 
+
+
+
 //----------------------------------------|
 //                                        |
 //        CREATIONS DES ANIMATIONS        |
@@ -251,36 +254,48 @@ Scroll();
 //            PAR NOM DE POKEMON          |
 //----------------------------------------|
 
-// Définit une fonction pour la recherche de Pokémon
 function SearchPoke() {
-    // Récupère la valeur saisie dans le champ de recherche et la met en minuscules
     const pokeFoundName = document.getElementById("pokemon-name").value.toLowerCase();
-    // Sélectionne le champ de recherche
-    const inputField = document.getElementById("pokemon-name");
-
-    // Ajoute un écouteur d'événement pour surveiller les saisies dans le champ de recherche
-    inputField.addEventListener("input", SearchPoke);
-    // Sélectionne toutes les cartes Pokémon
     const pokemonCards = document.querySelectorAll(".card");
 
-    // Parcourt chaque carte Pokémon
     pokemonCards.forEach(card => {
-        // Récupère le nom du Pokémon associé à la carte et le met en minuscule
         const pokemonName = card.querySelector(".card-title").textContent.toLowerCase();
-        
-        // Vérifie si le nom du Pokémon contient le texte saisi dans le champ de recherche
-        if (pokemonName.includes(pokeFoundName)) {
-            // Affiche la carte si le nom correspond
-            card.style.display = "block";
-        } else {
-            // Masque la carte si le nom ne correspond pas
-            card.style.display = "none";
-        }
+        card.style.display = pokemonName.includes(pokeFoundName) ? "block" : "none";
     });
 }
 
-// Appelle la fonction de recherche de Pokémon
+document.getElementById("pokemon-name").addEventListener("input", SearchPoke);
 SearchPoke();
+
+
+function PokeSearchType() {
+    // Ajouter les options de type Pokémon au select
+    let selectElement = document.getElementById("pokemon-type");
+    let types = ["fire", "water", "grass", "electric", "normal", "fighting", "flying", "poison", "psychic", "ice", "ground", "rock", "bug", "ghost", "dragon", "fairy", "steel"];
+
+    types.forEach(function(type) {
+        let option = document.createElement("option");
+        option.value = type;
+        option.textContent = type.charAt(0).toUpperCase() + type.slice(1); // Mettre la première lettre en majuscule
+        selectElement.appendChild(option);
+    });
+
+    const select = document.getElementById("pokemon-type");
+
+    select.addEventListener("change", function() {
+        const selectedType = select.value.toLowerCase();
+        const pokemonCards = document.querySelectorAll(".card");
+
+        pokemonCards.forEach(card => {
+            const pokemonTypes = Array.from(card.querySelectorAll(".card-text")).slice(-1)[0].textContent.toLowerCase().trim().split(" ");
+            card.style.display = (selectedType === "all" || pokemonTypes.includes(selectedType)) ? "block" : "none";
+        });
+    });
+}
+
+// Appel de la fonction PokeSearchType pour exécuter le code
+PokeSearchType();
+
 
 
 //----------------------------------------|
@@ -299,8 +314,6 @@ document.addEventListener("DOMContentLoaded", function() {
     BackgroundMusicPoke.volume = 0.021;
     BackgroundMusicPoke.play();
 });
-
-
 
 // Définit une fonction pour réinitialiser et lire la musique en boucle
 function playBackgroundMusic() {
@@ -322,7 +335,7 @@ function getPokemonCryUrl(pokemonId) {
 
 // Définit une fonction pour gérer le déclenchement du bruit
 function PokeTitleClick() {
-    const Pokeclick = new Audio('images/pokesoundclick.mp3'); // Remplacez 'chemin_vers_le_son.mp3' par le chemin vers votre fichier audio
+    const Pokeclick = new Audio('images/pokesoundclick.mp3');
     Pokeclick.volume = 0.1;
     Pokeclick.play();
     
@@ -330,7 +343,9 @@ function PokeTitleClick() {
 
 // Sélectionne l'élément de fond d'écran Pokemon (le titre du Pokedex)
 let PokeclickTitle = document.getElementById('poketitle');
+let PokeclickTitle2 = document.getElementById('scrollArrow');
 
 // Ajoute un écouteur d'événement au clic sur le fond d'écran Pokemon (le titre)
-PokeclickTitle  .addEventListener('click', PokeTitleClick);
+PokeclickTitle.addEventListener('click', PokeTitleClick);
+PokeclickTitle2.addEventListener('click', PokeTitleClick);
 

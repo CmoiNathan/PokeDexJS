@@ -17,11 +17,14 @@
     <div class="background">
         <div class="credits">Crédit : Nathan MARTINET</div>
             <div class="container">
-                <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/436/896/datas/original.png" class="pokedex-title" id="poketitle" data-aos="fade-down-right">
+                <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/436/896/datas/original.png" class="pokedex-title" id="poketitle">
                 <form method="post" class="form-pokedex" onsubmit="return false;">
                     <div class="mb-3">
                         <label for="pokemon-name" class="label-poke text-center" id="label"><img src="images/Find-your-Pokemon-19-03-2024.png" class="find-Poketitle" alt="pokemon-font" border="0"></label>
                         <input type="text" id="pokemon-name" name="pokemon-name" class="input-poke" placeholder="Pikachu...">
+                        <select id="pokemon-type" class="form-select">
+                            <option value="all" id="pokemon-type">All types</option>
+                        </select>
                     </div>
                 </form>
                 <div id="pokemon-card"></div>
