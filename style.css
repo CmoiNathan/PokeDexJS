@@ -187,6 +187,12 @@ html {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
+#pokemon-type {
+    width: 60vh ;
+    margin-left: 57px;
+    margin-top: 30px;
+}
+
 #pokemonModalNumber {
     font-size: 1.2rem;
     margin-bottom: 10px;
@@ -205,3 +211,31 @@ html {
     color: #333;
 }
 
+@media screen and (max-width: 600px) {
+    .form-pokedex {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .pokedex-title {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .form-pokedex .label-poke {
+        font-size: 14px;
+        margin-top: -20px;
+    }
+    #pokemon-type {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 120px;
+        position: relative;
+    }
+    
+    .find-Poketitle {
+        margin-top: 70px;
+    }
+}
