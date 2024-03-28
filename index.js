@@ -39,7 +39,7 @@ document.getElementById('pokemon-modal').innerHTML = `<div class="modal fade" id
 async function PokeCard() {
     try {
         // Récupère les données de tous les 151 premiers Pokémon
-        const PokemonResponse = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1025");
+        const PokemonResponse = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
         const InfoPokemon = await PokemonResponse.json();
 
         // Parcours les données de chaque Pokémon
