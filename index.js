@@ -294,7 +294,8 @@ Scroll();
 //----------------------------------------|
 //                                        |
 //        CREATIONS DE LA RECHERCHE       |
-//            PAR NOM DE POKEMON          |
+//            PAR NOM ET                  |
+//            TYPE DE POKEMON             |
 //----------------------------------------|
 
 // La fonction SearchPoke est la recherche des Pokémon en fonction du nom saisi dans le input
@@ -330,7 +331,7 @@ function PokeSearchType() {
         let option = document.createElement("option");
         option.value = type;
         // On met la première lettre en majuscule pour chaque type.
-        option.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+        option.innerHTML = type.charAt(0).toUpperCase() + type.slice(1);
         selectElement.appendChild(option);
     });
 
