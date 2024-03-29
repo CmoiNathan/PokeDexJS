@@ -55,6 +55,3 @@ Ce projet a été développé par Nathan MARTINET.
 
 - Pour jouer le cri d'un Pokémon, assurez-vous d'avoir une connexion Internet active, car les fichiers audio sont chargés à partir d'Internet.
 - Les images des Pokémon sont également chargées à partir d'Internet, donc une connexion Internet est requise pour les afficher correctement.
-
----
-Ceci est une documentation de projet créée pour le projet Pokedex JS. Pour toute question ou assistance supplémentaire, veuillez contacter l'auteur du projet.
