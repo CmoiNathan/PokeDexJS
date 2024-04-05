@@ -18,6 +18,7 @@ Mon projet est un Pokedex web développée en JavaScript qui affiche les informa
    ```
 2. Ouvrez le fichier `index.html` dans votre navigateur web.
 
+3. Si vous voulez plus de pokémon que la première génération, changer la valeur à la ligne 42 en : const PokemonResponse = await fetch("https://pokeapi.co/api/v2/pokemon?limit=LIMITEAMETTRE_max 1025");
 ## Technologies utilisées
 
 - JavaScript
