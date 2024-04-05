@@ -2,6 +2,8 @@
 
 Mon projet est un Pokedex web développée en JavaScript qui affiche les informations des 151 premiers Pokémon. Il utilise l'API PokeAPI pour récupérer les données des Pokémon, telles que leurs noms, types, descriptions et évolutions. L'interface utilisateur est conçue avec HTML et Bootstrap pour afficher les cartes des Pokémon de manière interactive.
 
+/!\ Nom des pokémon en anglais
+
 ## Fonctionnalités
 
 - Affichage des cartes des 151 premiers Pokémon avec leurs images, noms, numéros, types et évolutions.
