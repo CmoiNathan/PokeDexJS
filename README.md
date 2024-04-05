@@ -1,6 +1,6 @@
 # README - Pokedex JS
 
-Ce projet est une application web développée en JavaScript qui affiche les informations des 151 premiers Pokémon. Il utilise l'API PokeAPI pour récupérer les données des Pokémon, telles que leurs noms, types, descriptions et évolutions. L'interface utilisateur est conçue avec HTML et Bootstrap pour afficher les cartes des Pokémon de manière interactive.
+Mon projet est un Pokedex web développée en JavaScript qui affiche les informations des 151 premiers Pokémon. Il utilise l'API PokeAPI pour récupérer les données des Pokémon, telles que leurs noms, types, descriptions et évolutions. L'interface utilisateur est conçue avec HTML et Bootstrap pour afficher les cartes des Pokémon de manière interactive.
 
 ## Fonctionnalités
 
@@ -18,6 +18,7 @@ Ce projet est une application web développée en JavaScript qui affiche les inf
    ```
 2. Ouvrez le fichier `index.html` dans votre navigateur web.
 
+3. Si vous voulez plus de pokémon que la première génération, changer la valeur à la ligne 42 en : const PokemonResponse = await fetch("https://pokeapi.co/api/v2/pokemon?limit=LIMITEAMETTRE_max 1025");
 ## Technologies utilisées
 
 - JavaScript
@@ -55,6 +56,3 @@ Ce projet a été développé par Nathan MARTINET.
 
 - Pour jouer le cri d'un Pokémon, assurez-vous d'avoir une connexion Internet active, car les fichiers audio sont chargés à partir d'Internet.
 - Les images des Pokémon sont également chargées à partir d'Internet, donc une connexion Internet est requise pour les afficher correctement.
-
----
-Ceci est une documentation de projet créée pour le projet Pokedex JS. Pour toute question ou assistance supplémentaire, veuillez contacter l'auteur du projet.
