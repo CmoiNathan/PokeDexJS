@@ -188,9 +188,9 @@ html {
 }
 
 #pokemon-type {
-    width: 60vh ;
-    margin-left: 57px;
-    margin-top: 30px;
+    width: 90%; 
+    max-width: 60vh; 
+    margin: 30px auto 0;
 }
 
 #pokemonModalNumber {
@@ -212,8 +212,14 @@ html {
 }
 
 @media screen and (max-width: 600px) {
+    #pokemon-type {
+        width: 90%; 
+        max-width: none;
+        margin: 0 auto; 
+    }
+
     .form-pokedex {
-        width: 90%;
+        width: 90%; 
         margin-top: 20px;
     }
 
@@ -226,13 +232,6 @@ html {
     .form-pokedex .label-poke {
         font-size: 14px;
         margin-top: -20px;
-    }
-    #pokemon-type {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        bottom: 120px;
-        position: relative;
     }
     
     .find-Poketitle {
