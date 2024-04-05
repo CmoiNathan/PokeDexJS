@@ -142,7 +142,7 @@ async function PokeCard() {
                 // Joue le cri du Pokémon quand le modal s'ouvre
                 const PokemonCry = getPokemonCryUrl(pokemonId);
                 const sound = new Audio(PokemonCry);
-                sound.volume = 0.021;
+                sound.volume = 0.091;
                 sound.play();
                 pokemonModal.show();
             });
@@ -342,7 +342,7 @@ PokeSearchType();
 
 const BackgroundMusicPoke = new Audio("images/pokemusic2.mp3");
 
-BackgroundMusicPoke.volume = 0.021;
+BackgroundMusicPoke.volume = 0.07;
 
 // Fonction pour démarrer la lecture de la musique
 function playBackgroundMusic() {
@@ -376,7 +376,7 @@ function getPokemonCryUrl(pokemonId) {
 // Définit une fonction pour gérer le déclenchement du bruit
 function PokeTitleClick() {
     const Pokeclick = new Audio('images/pokesoundclick.mp3');
-    Pokeclick.volume = 0.1;
+    Pokeclick.volume = 0.4;
     Pokeclick.play();
     
 }
